@@ -2,9 +2,12 @@
 " Name:          ShowPairs
 " Description:   Highlights the pair surrounding the current cursor location.
 " Author:        Anthony Kruize <trandor@labyrinth.net.au>
-" Version:       1.0
+" Version:       1.1
 " Modified:      22 April 2003
-" ChangeLog:     1.0 - First release.
+" ChangeLog:     1.1 - Fixed the fileformat so it doesn't include ^M's.
+"                      Fixed the highlighting so it works when 'fg' and 'bg'
+"                      aren't yet defined.
+"                1.0 - First release.
 "
 " Usage:         Copy this file into the plugin directory so it will be
 "                automatically sourced.
@@ -28,7 +31,8 @@ endif
 let loaded_showpairs = 1
 
 " Highlighting: By default we'll simply bold the pairs to make them stand out.
-hi default ShowPairsHL ctermfg=fg ctermbg=bg cterm=bold guifg=fg guibg=bg gui=bold
+"hi default ShowPairsHL ctermfg=fg ctermbg=bg cterm=bold guifg=fg guibg=bg gui=bold
+hi default ShowPairsHL cterm=bold gui=bold
 
 " AutoCommands
 aug ShowPairs
